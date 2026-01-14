@@ -9,5 +9,6 @@ public class Student
     public int Course { get; set; }
     public string PhoneNumber { get; set; } = string.Empty;
     
+    public LibraryCard? LibraryCard { get; set; }
     public List<BorrowRecord>? BorrowRecords { get; set; }
 }
