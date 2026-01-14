@@ -13,5 +13,4 @@ public interface IAuthorService
     public Response<List<GetAuthorDto>> GetAuthors();
     public Response<List<GetAuthorDto>> GetAuthorsWithBooks();
     public Response<List<GetAuthorDto>> GetAuthorsByCountry(string search);
-    public Response<List<GetAuthorDto>> GetAuthorsBornAfterYear(int year);
 }
