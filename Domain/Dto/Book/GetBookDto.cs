@@ -11,6 +11,7 @@ public class GetBookDto
     public string? Description { get; set; }
     public int PublishedYear { get; set; }
     public int Quantity { get; set; }
+    
     public GetGenreDto? Genre { get; set; }
     public GetAuthorDto? Author { get; set; }
     public List<GetBorrowRecordDto> ? BorrowRecords { get; set; }

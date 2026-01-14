@@ -58,6 +58,7 @@ public class AuthorService(ApplicationDbContext context) : IAuthorService
     }
     #endregion
 
+    #region GetAuthor
     public Response<GetAuthorDto> GetAuthor(int id)
     {
         var author = context.Authors.FirstOrDefault(x => x.Id == id);
@@ -72,7 +73,9 @@ public class AuthorService(ApplicationDbContext context) : IAuthorService
         };
         return new Response<GetAuthorDto>(getAuthor);
     }
+    #endregion
 
+    #region GetAuthors
     public Response<List<GetAuthorDto>> GetAuthors()
     {
         var allAuthors = context.Authors.Select(x => new GetAuthorDto()
@@ -87,7 +90,9 @@ public class AuthorService(ApplicationDbContext context) : IAuthorService
             return new Response<List<GetAuthorDto>>(HttpStatusCode.NotFound, "0 Author");
         return new Response<List<GetAuthorDto>>(allAuthors);
     }
+    #endregion
 
+    #region GetAuthorWithBooks
     public Response<List<GetAuthorDto>> GetAuthorsWithBooks()
     {
         var res = context.Authors.Include(b => b.Books).Select(x => new GetAuthorDto()
@@ -111,7 +116,9 @@ public class AuthorService(ApplicationDbContext context) : IAuthorService
         if (res.Count == 0)
             return new Response<List<GetAuthorDto>>(HttpStatusCode.BadRequest, "0 Author");
     }
+#endregion
 
+    #region GetAuthorByCountry
     public Response<List<GetAuthorDto>> GetAuthorsByCountry(string search)
     {
         var res = context.Authors.Select(x => new GetAuthorDto()
@@ -126,4 +133,5 @@ public class AuthorService(ApplicationDbContext context) : IAuthorService
         
         return new Response<List<GetAuthorDto>>(res);
     }
+    #endregion
 }
