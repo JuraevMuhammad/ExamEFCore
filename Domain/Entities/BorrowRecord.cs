@@ -11,6 +11,6 @@ public class BorrowRecord
     public DateTime BorrowDate { get; set; }
     public DateTime ReturnDate { get; set; }
     
-    public GetBookDto? Book { get; set; }
-    public GetStudentDto? Student { get; set; }
+    public Book? Book { get; set; }
+    public Student? Student { get; set; }
 }

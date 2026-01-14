@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.Author;
 
-public class CreatedAuthor
+public class CreatedAuthorDto
 {
     public string FullName { get; set; } = string.Empty;
     public string Country { get; set; } = string.Empty;

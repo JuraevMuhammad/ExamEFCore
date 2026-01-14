@@ -9,5 +9,5 @@ public class LibraryCard
     public DateTime IssueDate { get; set; }
     public int StudentId { get; set; }
     
-    public GetStudentDto? Student { get; set; }
+    public Student? Student { get; set; }
 }

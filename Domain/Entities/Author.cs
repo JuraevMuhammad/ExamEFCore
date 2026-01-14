@@ -9,5 +9,5 @@ public class Author
     public string Country { get; set; } = string.Empty;
     public DateTime BirthDate { get; set; }
     
-    public List<GetBookDto>? Books { get; set; }
+    public List<Book>? Books { get; set; }
 }

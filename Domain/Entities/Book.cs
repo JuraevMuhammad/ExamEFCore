@@ -14,7 +14,7 @@ public class Book
     public int AuthorId { get; set; }
     public int GenreId { get; set; }
     
-    public GetGenreDto? Genre { get; set; }
-    public GetAuthorDto? Author { get; set; }
-    public List<GetBorrowRecordDto> ? BorrowRecords { get; set; }
+    public Genre? Genre { get; set; }
+    public Author? Author { get; set; }
+    public List<BorrowRecord> ? BorrowRecords { get; set; }
 }
