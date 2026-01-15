@@ -41,7 +41,7 @@ public class BookService(ApplicationDbContext context) : IBookService
             return new Response<string>(HttpStatusCode.NotFound, "Book not found");
         res.Title = book.Title ?? res.Title;
         res.Description = book.Description;
-        res.GenreId = book.GenreId ?? res.GenreId;
+        res.GenreId = book.GenreId ??  res.GenreId;
         res.Quantity = book.Quantity ?? res.Quantity;
         res.AuthorId = book.AuthorId ?? res.AuthorId;
         res.PublishedYear = book.PublishedYear ?? res.PublishedYear;
@@ -155,7 +155,7 @@ public class BookService(ApplicationDbContext context) : IBookService
     }
     #endregion
     
-    #region GetBooksWithAuthorId
+    #region GetBooksPublishedInYear
     public Response<List<GetBookDto>> GetBooksPublishedInYear(int year)
     {
         var res = context.Books.Select(x => new GetBookDto()
